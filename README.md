@@ -32,7 +32,7 @@ Choose one of the ways to download this repository and follow the steps to start
     1. Add the additional CMake `-DENABLE_DATA=ON` option when building the project. Use the
        `-DENABLE_FUNCTIONAL_TESTS=ON` option to download the repository automatically to the
        `inference-engine\temp\data\src\data` directory.
-    2.  Go to the `inference-engine\temp\data\src\data` directory, open a terminal, and enter the
+    2.  Go to the `inference-engine\temp\models\src\data` directory, open a terminal, and enter the
         command to download the large file storage:
     ```bash
     git lfs pull
