@@ -5,7 +5,7 @@ SPDX-License-Identifier: Apache-2.0
 
 <ie>
     <plugins>
-        <plugin location="libMKLDNNPlugin.so" optional="yes" name="CUSTOM">
+        <plugin location="libMKLDNNPlugin.so" name="CUSTOM">
         </plugin>
     </plugins>
 </ie>
