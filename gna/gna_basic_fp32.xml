@@ -1,0 +1,108 @@
+<?xml version="1.0" ?>
+<net batch="1" name="model4" version="2">
+	<layers>
+		<layer id="0" name="Placeholder" precision="FP32" type="Input">
+			<output>
+				<port id="0">
+					<dim>1</dim>
+					<dim>1008</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="1" name="MatMul" precision="FP32" type="FullyConnected">
+			<data out-size="1008"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>1008</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2">
+					<dim>1</dim>
+					<dim>1008</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="0" size="4064256"/>
+			</blobs>
+		</layer>
+		<layer id="2" name="Relu" precision="FP32" type="ReLU">
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>1008</dim>
+				</port>
+			</input>
+			<output>
+				<port id="1">
+					<dim>1</dim>
+					<dim>1008</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="3" name="MatMul_1" precision="FP32" type="FullyConnected">
+			<data out-size="1008"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>1008</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2">
+					<dim>1</dim>
+					<dim>1008</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="4064256" size="4064256"/>
+			</blobs>
+		</layer>
+		<layer id="4" name="add_1" precision="FP32" type="Eltwise">
+			<data operation="sum"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>1008</dim>
+				</port>
+				<port id="1">
+					<dim>1</dim>
+					<dim>1008</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2">
+					<dim>1</dim>
+					<dim>1008</dim>
+				</port>
+			</output>
+		</layer>
+		<layer id="5" name="MatMul_2" precision="FP32" type="FullyConnected">
+			<data out-size="1008"/>
+			<input>
+				<port id="0">
+					<dim>1</dim>
+					<dim>1008</dim>
+				</port>
+			</input>
+			<output>
+				<port id="2">
+					<dim>1</dim>
+					<dim>1008</dim>
+				</port>
+			</output>
+			<blobs>
+				<weights offset="8128512" size="4064256"/>
+			</blobs>
+		</layer>
+	</layers>
+	<edges>
+		<edge from-layer="0" from-port="0" to-layer="1" to-port="0"/>
+		<edge from-layer="1" from-port="2" to-layer="2" to-port="0"/>
+		<edge from-layer="0" from-port="0" to-layer="3" to-port="0"/>
+		<edge from-layer="2" from-port="1" to-layer="4" to-port="0"/>
+		<edge from-layer="3" from-port="2" to-layer="4" to-port="1"/>
+		<edge from-layer="4" from-port="2" to-layer="5" to-port="0"/>
+	</edges>
+</net>
