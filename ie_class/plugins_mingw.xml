@@ -5,7 +5,7 @@ SPDX-License-Identifier: Apache-2.0
 
 <ie>
     <plugins>
-        <plugin location="libMKLDNNPlugin.dll" name="CUSTOM">
+        <plugin location="libov_intel_cpu_plugin.dll" name="CUSTOM">
         </plugin>
     </plugins>
 </ie>
