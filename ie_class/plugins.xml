@@ -5,7 +5,7 @@ SPDX-License-Identifier: Apache-2.0
 
 <ie>
     <plugins>
-        <plugin location="libov_intel_cpu_plugin.so" name="CUSTOM">
+        <plugin location="libopenvino_intel_cpu_plugin.so" name="CUSTOM">
         </plugin>
     </plugins>
 </ie>

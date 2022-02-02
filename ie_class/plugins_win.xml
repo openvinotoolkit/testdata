@@ -5,7 +5,7 @@ SPDX-License-Identifier: Apache-2.0
 
 <ie>
     <plugins>
-        <plugin location="ov_intel_cpu_plugin.dll" name="CUSTOM">
+        <plugin location="openvino_intel_cpu_plugin.dll" name="CUSTOM">
         </plugin>
     </plugins>
 </ie>
